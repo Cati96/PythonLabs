@@ -158,13 +158,25 @@ exercitiul_7( "test", "hello", "lab002", x=2, flag=False)
 # Observatie: In cazul in care listele primite ca input nu au acelasi numar de elemente, elementele lipsa vor fi
 # inlocuite cu None pentru a putea fi generate max([len(x) for x in input_lists]) tuple.
 def exercitiul_8(*lists):
-    print("ok")
-print("\nRaspuns exercitiul 8:")
-exercitiul_8()
+    listOfTuples = list()
 
-# 9. Să se scrie o funție ce va ordona o listă de tuple de string-uri în funcție de al 3-lea caracter al celui
-# de-al 2-lea element din tuplă. Exemplu: [('abc', 'bcd'), ('abc', 'zza')] ==> [('abc', 'zza'), ('abc', 'bcd')]
-def exercitiul_9():
-    print("ok")
-print("\nRaspuns exercitiul 9:")
-exercitiul_9()
+    max = 0
+    for i in lists:
+        if len(i) > max:
+            max = len(i)
+
+    for i in range(0,max):
+        temp = list()
+        for j in range(0,len(lists)):
+            if i >= len(lists[j]):
+                temp.append(None)
+            else:
+                temp.append(lists[j][i])
+        temp = tuple(temp)
+        listOfTuples.append(temp)
+
+    print(listOfTuples)
+print("\nRaspuns exercitiul 8:")
+exercitiul_8([1,2,3], [5,6,7], ["a", "b", "c"])
+print("#########")
+exercitiul_8([1,2,3], [5,6,7], ["a", "b", "c","d","f","g","h"],[])
