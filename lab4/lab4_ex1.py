@@ -6,5 +6,23 @@
 def exercitiul_1():
     a = input("Enter a: ")
     b = input("Enter b: ")
+    try:
+        a = float(a)
+    except ValueError:
+        print("a is not number...")
+    else:
+        try:
+            b = float(b)
+        except ValueError:
+            print("b is not number...")
+        else:
+            print("a - b = ", a - b )
+            print("a + b = ", a + b)
+            print("a * b = ", a * b)
+            try:
+                print("a / b = ", a / b)
+            except ZeroDivisionError:
+                print("Division by 0...")
+
 print("\nRaspuns exercitiul 1:")
 exercitiul_1()
