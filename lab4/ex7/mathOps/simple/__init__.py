@@ -1,0 +1,1 @@
+print("Package mathOps.simple init")
